@@ -4,14 +4,12 @@ from .models import Post, Group, User
 from .forms import PostForm
 from django.contrib.auth.decorators import login_required
 POSTS_QUANTITY = 10
-CHAR_THIRTY = 30
 
 
 def paginatorr(post_list, request):
     paginator = Paginator(post_list, POSTS_QUANTITY)
     page_number = request.GET.get('page')
-    page_obj = paginator.get_page(page_number)
-    return page_obj
+    return paginator.get_page(page_number)
 
 
 def index(request):
