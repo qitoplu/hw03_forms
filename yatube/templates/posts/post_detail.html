@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
-{% block title %}Пост: {{ post_title }}{% endblock %}
-{% block header %}Пост: {{ post_title }}{% endblock %}
+{% block title %}Пост: {{ post.text }}{% endblock %}
+{% block header %}Пост: {{ post.text }}{% endblock %}
 {% block content %}
     <div class="container py-5">
       <div class="row">
@@ -20,7 +20,7 @@
               Автор: {{ author.get_full_name }}
             </li>
             <li class="list-group-item d-flex justify-content-between align-items-center">
-              Всего постов автора:  <span >{{ post.posts_author }}</span>
+              Всего постов автора:  <span >{{ post.author.posts.count }}</span>
             </li>
             <li class="list-group-item">
               {% if post.author %}  
